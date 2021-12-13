@@ -2,7 +2,7 @@
 At this moment this repo does multiple things.
 ## Features: Tweepy stream + Push to SQL
 You can launch tweepy twitter stream with run_stream.py and collect tweets with keywords of your liking.  
-Stream starts collecting the text of the tweet, location, date, user verification, number of followers and performes sentiment analysis with VADER  
+Stream starts collecting the text of the tweet, location, date, user verification, number of followers and performs sentiment analysis with VADER  
 After this, data are pushed to mysql database. You can use your own local database, I advise starting with fresh scheme as script will set the table up for you. mssql can be used too with some changes in the code. I was too lazy to do that.  
 ### How to start the stream
 0. Install prerequisites as stated in "verymessyprerequisiteshavefun.txt".  Ideally in new virtenviron. Yes, you will run into issues. Mostly those are sorted by common sense but feel free to write them down for me, always appreciated.  
