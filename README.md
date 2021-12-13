@@ -27,6 +27,10 @@ If you are lucky enough and your tweets include location, nice map will show and
 3. Enjoy  
   
 # TODO
+Working on right now:
+Change stream.py def on_status so I can collect tweet ID for further retweet gathering in the future.
+Changing SQL database setup and push because of that.
+
 Improve sentiment analysis: After further research, vader actually seems as perfect tool for my purpose. I still can improve the accuracy in different ways, though! Getting rid of spelling mistakes. I would love to be able to do that while I'm grabbing the twitter stream and input the process before sentiment analysis. The more I get to know, the more clear it is that threading will be necessary. Anyway, once I grab the status.text I can run it first through Regular Expression module so I will get rid of repeated alphabets (caaaar, amazzzzing etc). After this is done I can use Pyspellchecker library to correct spelling of the tweets. This should increase the accuracy of my sentiment analysis greatly.
 
 Named entity recognition: get to know other topics the users are tweeting about. Eg my topic is uyghurs in xinjiang. What they talk about the most? China? CCP? 
