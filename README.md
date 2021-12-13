@@ -12,7 +12,9 @@ After this, data are pushed to mysql database. You can use your own local databa
 4. Bash/cmd/shell/whatever: - python run_stream -k "Keyword1,Keyword2,Keyword3"  
 You can run a lot of different keywords, there shouldnt be a limit to the amount.  
 The stream will start to collect data
+
 Alternatively you can use runinbackground.bat - you need to edit the code inside so it matches your filepath and desired keywords. To stop the stream you need to go and kill the process through task manager (OS dependent. I am running Windows).
+
 NOTICE: You need to have twitter developer account. Consult: https://dev.to/sumedhpatkar/beginners-guide-how-to-apply-for-a-twitter-developer-account-1kh7  
   
 ## Feature: Streamlit dashboard
@@ -25,11 +27,19 @@ If you are lucky enough and your tweets include location, nice map will show and
 3. Enjoy  
   
 # TODO
-setup config.py so you can set up your credentials easier. I tried to do that, run into some issues and ultimately opted to skip this. I will need to learn how to use python for that, though. In the future. Maybe.  
+setup config.py so you can set up your credentials easier. I tried to do that, run into some issues and ultimately opted to skip this. I will need to learn how to use python for that, though, haha. In the future. Maybe.  
+
 Named entity recognition: get to know other topics the users are tweeting about. Eg my topic is uyghurs in xinjiang. What they talk about the most? China? CCP? Dissent? I want to know and I will add this to the stream on_status in the future.  
+
 Improve sentiment analysis. I would like to introduce Flair instead of Vader and stack it with ELMo. Thus, I will need to train my own Flair model, then introduce it instead of VADER into stream. I might need to introduce threading so the script can keep up. Hopefully not.  
+
 I would like to push the whole process on some external service. Thinking about Collab. MySQL hosts are plenty. I really want to collect the stream 24/7. See you later, threading!  
+
+Low prio:
+Push my Streamlit app to a host service so I can show my data to my friends online.
 
 ## Shoutout
 Yes, this script is super heavily inspired by https://github.com/jonathanreadshaw/streamlit-twitter-stream so shout out is due and here it goes.  
-It didn't work for me and neither it did for other git users as well from the get go. I made necessary changes so it should be pretty easy to set up for any of you now. Also, it broke connection frequently, so I introduced some code to combat that. It seems stable now.  
+It didn't work for me properly from the get go and neither it did for other git users. I made necessary changes to get rid of errors so it should be pretty easy to set up for any of you now. 
+
+Also, it broke connection frequently, so I introduced some code to combat that. It seems stable now.  
