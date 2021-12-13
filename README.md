@@ -27,16 +27,23 @@ If you are lucky enough and your tweets include location, nice map will show and
 3. Enjoy  
   
 # TODO
-setup config.py so you can set up your credentials easier. I tried to do that, run into some issues and ultimately opted to skip this. I will need to learn how to use python for that, though, haha. In the future. Maybe.  
+Improve sentiment analysis: After further research, vader actually seems as perfect tool for my purpose. I still can improve the accuracy in different ways, though! Getting rid of spelling mistakes. I would love to be able to do that while I'm grabbing the twitter stream and input the process before sentiment analysis. The more I get to know, the more clear it is that threading will be necessary. Anyway, once I grab the status.text I can run it first through Regular Expression module so I will get rid of repeated alphabets (caaaar, amazzzzing etc). After this is done I can use Pyspellchecker library to correct spelling of the tweets. This should increase the accuracy of my sentiment analysis greatly.
 
-Named entity recognition: get to know other topics the users are tweeting about. Eg my topic is uyghurs in xinjiang. What they talk about the most? China? CCP? Dissent? I want to know and I will add this to the stream on_status in the future.  
-
-Improve sentiment analysis. I would like to introduce Flair instead of Vader and stack it with ELMo. Thus, I will need to train my own Flair model, then introduce it instead of VADER into stream. I might need to introduce threading so the script can keep up. Hopefully not.  
+Named entity recognition: get to know other topics the users are tweeting about. Eg my topic is uyghurs in xinjiang. What they talk about the most? China? CCP? 
+I looked more into NER. Getting some output with spacy shouldn't be much of an issue. I don't need this to be terrible thorough. 
+Few issues I can think of that will need solving:
+Where to should I push the output? Inside the SQL library? For one tweet they can be multiple terms.. How to set it up? 
+In the end, what can I use this output for? Checking most common keyword-NER pairs? Is it gonna be useful for my analysis?
 
 I would like to push the whole process on some external service. Thinking about Collab. MySQL hosts are plenty. I really want to collect the stream 24/7. See you later, threading!  
 
 Low prio:
-Push my Streamlit app to a host service so I can show my data to my friends online.
+Push my Streamlit app to a host service so I can show my data to my friends and collegues online.
+
+setup config.py so you can set up your credentials easier. I tried to do that, run into some issues and ultimately opted to skip this. I will need to learn how to use python for that, though, haha. In the future. Maybe.  
+
+Deprecated:
+I would like to introduce Flair instead of Vader and stack it with ELMo. Thus, I will need to train my own Flair model, then introduce it instead of VADER into stream. I might need to introduce threading so the script can keep up. Hopefully not.
 
 ## Shoutout
 Yes, this script is super heavily inspired by https://github.com/jonathanreadshaw/streamlit-twitter-stream so shout out is due and here it goes.  
