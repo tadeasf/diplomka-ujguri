@@ -5,7 +5,7 @@ You can launch tweepy twitter stream with run_stream.py and collect tweets with 
 Stream starts collecting the text of the tweet, location, date, user verification, number of followers and performs sentiment analysis with VADER  
 After this, data are pushed to mysql database. You can use your own local database, I advise starting with fresh scheme as script will set the table up for you. mssql can be used too with some changes in the code. I was too lazy to do that so it is not included.  
 ### How to start the stream
-0. Install prerequisites as stated in "verymessyprerequisiteshavefun.txt".  Ideally in new virtenviron. Yes, you will run into issues. Mostly those are sorted by common sense but feel free to write them down for me, always appreciated.  
+0. Install prerequisites as stated in "verymessyprerequisiteshavefun.txt".  Ideally in new virtenviron. Yes, you will run into issues. Those are mostly sorted by common sense but feel free to write them down for me and I will try to help you sort the out if needed.  
 1. Setup fresh mysql database scheme with https://www.mysql.com/ - mySQL workbench will make this easy for you.  
 2. Insert your user:password@host:port/schemename inside app.py and run_stream.py scripts accordingly  
 3. Insert your api,apisecret,accesstoken,accesssecrettoken credentials inside run_stream.py as illustrated in the code.  
