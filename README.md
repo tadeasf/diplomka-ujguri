@@ -40,4 +40,6 @@ Push my Streamlit app to a host service so I can show my data to my friends onli
 
 ## Shoutout
 Yes, this script is super heavily inspired by https://github.com/jonathanreadshaw/streamlit-twitter-stream so shout out is due and here it goes.  
-It didn't work for me and neither it did for other git users as well from the get go. I made necessary changes so it should be pretty easy to set up for any of you now. Also, it broke connection frequently, so I introduced some code to combat that. It seems stable now.  
+It didn't work for me properly from the get go and neither it did for other git users. I made necessary changes to get rid of errors so it should be pretty easy to set up for any of you now. 
+
+Also, it broke connection frequently, so I introduced some code to combat that. It seems stable now.  
