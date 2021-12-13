@@ -27,7 +27,7 @@ If you are lucky enough and your tweets include location, nice map will show and
 3. Enjoy  
   
 # TODO
-setup config.py so you can set up your credentials easier. I tried to do that, run into some issues and ultimately opted to skip this. I will need to learn how to use python for that, though. In the future. Maybe.  
+setup config.py so you can set up your credentials easier. I tried to do that, run into some issues and ultimately opted to skip this. I will need to learn how to use python for that, though, haha. In the future. Maybe.  
 
 Named entity recognition: get to know other topics the users are tweeting about. Eg my topic is uyghurs in xinjiang. What they talk about the most? China? CCP? Dissent? I want to know and I will add this to the stream on_status in the future.  
 
