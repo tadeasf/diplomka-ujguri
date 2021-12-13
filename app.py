@@ -3,6 +3,8 @@ import pandas as pd
 from sqlalchemy import create_engine
 import datetime
 
+
+# you are going to put your database info here as illustrated
 @st.cache(allow_output_mutation=True, show_spinner=False)
 def get_con():
     return create_engine('mysql+pymysql://twitterscript:yourpassword@localhost:3306/uyghur')
@@ -44,11 +46,11 @@ def sentiment_plot_data(df, freq):
     plot_df = plot_df.rename_axis(None, axis='columns')
     return plot_df
 
-
+# You can easilly guess what this is but I am putting this text here so you can notice this easier
 st.set_page_config(layout="wide", page_title='Uyghur tweets')
 
 data, timestamp = get_data()
-
+# you can rename your dashboard here
 st.header('China Uyghur')
 st.write('Total tweet count: {}'.format(data.shape[0]))
 st.write('Data last loaded {}'.format(timestamp))

@@ -9,9 +9,10 @@ After this, data are pushed to mysql database. You can use your own local databa
 1. Setup fresh mysql database scheme with https://www.mysql.com/ - mySQL workbench will make this easy for you.  
 2. Insert your user:password@host:port/schemename inside "app.py" and "run_stream.py" scripts accordingly  
 3. Insert your api,apisecret,accesstoken,accesssecrettoken credentials inside "run_stream.py" as illustrated in the code.  
-4. Open console - python run_stream -k "Keyword1,Keyword2,Keyword3"  
+4. Bash/cmd/shell/whatever: - python run_stream -k "Keyword1,Keyword2,Keyword3"  
 You can run a lot of different keywords, there shouldnt be a limit to the amount.  
-The stream will start to collect data  
+The stream will start to collect data
+Alternatively you can use runinbackground.bat - you need to edit the code inside so it matches your filepath and desired keywords. To stop the stream you need to go and kill the process through task manager (OS dependent. I am running Windows).
 NOTICE: You need to have twitter developer account. Consult: https://dev.to/sumedhpatkar/beginners-guide-how-to-apply-for-a-twitter-developer-account-1kh7  
   
 ## Feature: Streamlit dashboard

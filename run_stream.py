@@ -26,6 +26,7 @@ def parse_args():
 def run():
     auth = OAuthHandler('api', 'secretapi')
     auth.set_access_token('access', 'secretaccess')
+    # this is where you are gonna be putting your keys in!
     keywords = parse_args().keywords.split(',')
     keywords = [word.strip(' ') for word in keywords]
     listener = TweetListener(keywords)
@@ -36,6 +37,7 @@ def run():
             logging.info('Starting stream: {}'.format(keywords[0]))
             stream.filter(track=keywords, languages=['en'], stall_warnings=True)
             logging.info('Stream closed')
+            # this is the sequency that stopped tweepy to break connection every few hours. i am basically passing any protocol error. seems to work so far, might need to update this later.
 
         except (ProtocolError, AttributeError):
             continue
