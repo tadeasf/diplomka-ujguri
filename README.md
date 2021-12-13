@@ -54,3 +54,12 @@ Yes, this script is super heavily inspired by https://github.com/jonathanreadsha
 It didn't work for me properly from the get go and neither it did for other git users. I made necessary changes to get rid of errors so it should be pretty easy to set up for any of you now. 
 
 Also, it broke connection frequently, so I introduced some code to combat that. It seems stable now.  
+
+# Useful links
+https://developer.twitter.com/en/docs/twitter-api/metrics  
+https://developer.twitter.com/en/docs/twitter-api/annotations/overview - NER?  
+https://developer.twitter.com/en/docs/twitter-api/data-dictionary/object-model/tweet  
+https://developer.twitter.com/en/docs/twitter-api/expansions  
+https://developer.twitter.com/en/docs/twitter-api/fields  
+https://stackoverflow.com/questions/13928155/spell-checker-for-python  
+https://blog.quantinsti.com/vader-sentiment/  
