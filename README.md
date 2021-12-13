@@ -28,8 +28,11 @@ If you are lucky enough and your tweets include location, nice map will show and
   
 # TODO
 setup config.py so you can set up your credentials easier. I tried to do that, run into some issues and ultimately opted to skip this. I will need to learn how to use python for that, though. In the future. Maybe.  
+
 Named entity recognition: get to know other topics the users are tweeting about. Eg my topic is uyghurs in xinjiang. What they talk about the most? China? CCP? Dissent? I want to know and I will add this to the stream on_status in the future.  
+
 Improve sentiment analysis. I would like to introduce Flair instead of Vader and stack it with ELMo. Thus, I will need to train my own Flair model, then introduce it instead of VADER into stream. I might need to introduce threading so the script can keep up. Hopefully not.  
+
 I would like to push the whole process on some external service. Thinking about Collab. MySQL hosts are plenty. I really want to collect the stream 24/7. See you later, threading!  
 
 Low prio:
