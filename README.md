@@ -7,8 +7,8 @@ After this, data are pushed to mysql database. You can use your own local databa
 ### How to start the stream
 0. Install prerequisites as stated in "verymessyprerequisiteshavefun.txt".  Ideally in new virtenviron. Yes, you will run into issues. Those are mostly sorted by common sense but feel free to write them down for me and I will try to help you sort the out if needed.  
 1. Setup fresh mysql database scheme with https://www.mysql.com/ - mySQL workbench will make this easy for you.  
-2. Insert your user:password@host:port/schemename inside app.py and run_stream.py scripts accordingly  
-3. Insert your api,apisecret,accesstoken,accesssecrettoken credentials inside run_stream.py as illustrated in the code.  
+2. Insert your user:password@host:port/schemename inside "app.py" and "run_stream.py" scripts accordingly  
+3. Insert your api,apisecret,accesstoken,accesssecrettoken credentials inside "run_stream.py" as illustrated in the code.  
 4. Open console - python run_stream -k "Keyword1,Keyword2,Keyword3"  
 You can run a lot of different keywords, there shouldnt be a limit to the amount.  
 The stream will start to collect data  
