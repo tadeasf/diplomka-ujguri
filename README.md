@@ -32,6 +32,9 @@ Named entity recognition: get to know other topics the users are tweeting about.
 Improve sentiment analysis. I would like to introduce Flair instead of Vader and stack it with ELMo. Thus, I will need to train my own Flair model, then introduce it instead of VADER into stream. I might need to introduce threading so the script can keep up. Hopefully not.  
 I would like to push the whole process on some external service. Thinking about Collab. MySQL hosts are plenty. I really want to collect the stream 24/7. See you later, threading!  
 
+Low prio:
+Push my Streamlit app to a host service so I can show my data to my friends online.
+
 ## Shoutout
 Yes, this script is super heavily inspired by https://github.com/jonathanreadshaw/streamlit-twitter-stream so shout out is due and here it goes.  
 It didn't work for me and neither it did for other git users as well from the get go. I made necessary changes so it should be pretty easy to set up for any of you now. Also, it broke connection frequently, so I introduced some code to combat that. It seems stable now.  
