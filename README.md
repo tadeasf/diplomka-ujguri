@@ -14,6 +14,7 @@ You can run a lot of different keywords, there shouldnt be a limit to the amount
 The stream will start to collect data
 
 Alternatively you can use runinbackground.bat - you need to edit the code inside so it matches your filepath and desired keywords. To stop the stream you need to go and kill the process through task manager (OS dependent. I am running Windows).
+
 NOTICE: You need to have twitter developer account. Consult: https://dev.to/sumedhpatkar/beginners-guide-how-to-apply-for-a-twitter-developer-account-1kh7  
   
 ## Feature: Streamlit dashboard
