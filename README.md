@@ -39,7 +39,7 @@ I would like to push the whole process on some external service. Thinking about 
 Low prio:
 Push my Streamlit app to a host service so I can show my data to my friends and collegues online.
 
-Deprecated:
+Past ideas:  
 I would like to introduce Flair instead of Vader and stack it with ELMo. Thus, I will need to train my own Flair model, then introduce it instead of VADER into stream. I might need to introduce threading so the script can keep up. Hopefully not.
 
 Finished:
