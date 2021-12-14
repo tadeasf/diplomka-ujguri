@@ -2,12 +2,21 @@ import streamlit as st
 import pandas as pd
 from sqlalchemy import create_engine
 import datetime
+from config import DBConfig
+import sqlalchemy
+
+connect_url = sqlalchemy.engine.url.URL(
+    'mysql+pymysql',
+    username=DBConfig.USER,
+    password=DBConfig.PWORD,
+    host=DBConfig.HOST,
+    port=DBConfig.PORT,
+    database=('main'))
 
 
-# you are going to put your database info here as illustrated
 @st.cache(allow_output_mutation=True, show_spinner=False)
 def get_con():
-    return create_engine('mysql+pymysql://twitterscript:yourpassword@localhost:3306/uyghur')
+    return create_engine(connect_url)
 
 
 @st.cache(allow_output_mutation=True, show_spinner=False, ttl=5*60)
@@ -47,11 +56,11 @@ def sentiment_plot_data(df, freq):
     return plot_df
 
 # You can easilly guess what this is but I am putting this text here so you can notice this easier
-st.set_page_config(layout="wide", page_title='Uyghur tweets')
+st.set_page_config(layout="wide", page_title='Uyghur.tweets')
 
 data, timestamp = get_data()
 # you can rename your dashboard here
-st.header('China Uyghur')
+st.header('Uyghur Tweet Database')
 st.write('Total tweet count: {}'.format(data.shape[0]))
 st.write('Data last loaded {}'.format(timestamp))
 
@@ -62,9 +71,7 @@ start_date_option = st.sidebar.selectbox('Select Start Date', date_options, inde
 end_date_option = st.sidebar.selectbox('Select End Date', date_options, index=len(date_options)-1)
 
 keywords = data.Subject.unique()
-keyword_options = st.sidebar.multiselect(label='Subjects to Include:', options=keywords.tolist(), default=keywords.tolist())
-
-data_subjects = data[data.Subject.isin(keyword_options)]
+data_subjects = data
 data_daily = filter_by_date(data_subjects, start_date_option, end_date_option)
 
 top_daily_tweets = data_daily.sort_values(['Followers'], ascending=False).head(10)
@@ -91,10 +98,6 @@ col1.line_chart(plotdata)
 col2.subheader('Mean Sentiment')
 plotdata2 = sentiment_plot_data(data_daily, plot_freq)
 col2.line_chart(plotdata2)
-
-
-locations = pd.DataFrame(pd.eval(data_daily[data_daily['location'].notnull()].location), columns=['lon', 'lat'])
-st.map(locations)
 
 
 

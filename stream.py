@@ -22,19 +22,19 @@ class TweetListener(StreamListener):
             text = status.extended_tweet['full_text']
         else:
             text = status.text
-        location = status.coordinates
-        if location:
-            location = str(status.coordinates['coordinates'])
+            # this is where I can try to implement spelling correction later
         keyword = self.check_keyword(text)
         if not keyword:
             return
         sentiment = self.sentiment_model.polarity_scores(text).get('compound')
         if sentiment == 0:
             return
-        tweet = Tweet(body=text, keyword=keyword, tweet_date=status.created_at, location=location,
-                      verified_user=status.user.verified, followers=status.user.followers_count,
-                      sentiment=sentiment)
+        tweet = Tweet(body=text, keyword=keyword, tweet_date=status.created_at, followers=status.user.followers_count,
+                      tweetid=status.id, userid=status.user.id, tweetsource=status.source, sentiment=sentiment)
         self.insert_tweet(tweet)
+        # Huge changes here! I got rid of location. Only a handful of tweets have it, I read through all API options and there isn't a nice way to get it in readytobeplotted format
+        # I included user ID (I can trace tweets back now if I will want to! (which is great for metric-lookup in the future)
+        # Also newly included: tweet ID (I can trace back tweets) and source of the tweets. Might be interesting metric in the future
 
     def on_error(self, status_code):
         if status_code == 420:

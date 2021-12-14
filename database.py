@@ -2,10 +2,18 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
 from contextlib import contextmanager
+from config import DBConfig
+import sqlalchemy
 
+connect_url = sqlalchemy.engine.url.URL(
+    'mysql+pymysql',
+    username=DBConfig.USER,
+    password=DBConfig.PWORD,
+    host=DBConfig.HOST,
+    port=DBConfig.PORT,
+    database=('main'))
 
-# you are going to put your database configuration inside the code here, as illustrated
-engine = create_engine('mysql+pymysql://twitterscript:yourpassword@localhost:3306/uyghur')
+engine = create_engine(connect_url)
 Session = scoped_session(sessionmaker(autocommit=False, bind=engine))
 Base = declarative_base()
 
