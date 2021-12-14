@@ -2,6 +2,9 @@ import os
 from dotenv import load_dotenv
 load_dotenv()
 
+# I am introducing dotenv because I found it to be the easiest way to set config file up.
+# You can check if this is working through according python commands eg print(USER)
+
 class TwitterConfig:
     CONSUMER_KEY = os.environ.get('CONSUMER_KEY')
     CONSUMER_SECRET = os.environ.get('CONSUMER_SECRET')
